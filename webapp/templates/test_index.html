@@ -4,14 +4,9 @@
 		<title>Login</title>
 	</head>
 	<body>
-		<form action='http://127.0.0.1:5000/display_name/' method='post'>
-			<fieldset>
-				<legend>Enter your first and last name:</legend>
-				First name: 
-				<input type='text' name='first_name' placeholder='John'/><br/>
-				Last name:
-				<input type='text' name='last_name' placeholder='Doe'/><br/>
-			</fieldset>
+		<form action='http://127.0.0.1:5000/predict/' method='post'>
+			Enter a tweet: 
+			<input type='text' name='tweet' placeholder='I hate you all!' maxlength='140' size='140'/>
 			<input type='submit' value='SUBMIT'/>
 		</form>
 	</body>
