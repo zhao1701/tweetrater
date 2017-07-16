@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Login</title>
+		<title>Home</title>
+		<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+		<script src='../static/test_script.js' type='text/javascript'></script>
 	</head>
 	<body>
-		<form action='http://127.0.0.1:5000/predict/' method='post'>
+		<form method='get'>
 			Enter a tweet: 
-			<input type='text' name='tweet' placeholder='I hate you all!' maxlength='140' size='140'/>
-			<input type='submit' value='SUBMIT'/>
+			<input type='text' name='tweet' placeholder='Limit: 140 characters' maxlength='140' size='140'/>
+			<button id='submit'>SUBMIT</button>
+			<button id='clear'>CLEAR</button>
 		</form>
+		<div class='results'>
+		</div>
 	</body>
 </html>
