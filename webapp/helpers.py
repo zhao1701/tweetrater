@@ -40,4 +40,4 @@ def tweet_rater(tweet):
     else:
         print('I\'m {:2.4}% sure that\'s hate speech.'.format(probas[2]*100))
 
-print(tweet_rater('i hate you faggot niggers'))
+print(tweet_rater('i hate you all'))
