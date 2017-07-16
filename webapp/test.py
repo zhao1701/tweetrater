@@ -1,16 +1,16 @@
-from flask import Flask, redirect, url_for, request, render_template
+from flask import Flask, redirect, url_for, request, render_template, jsonify
+from helpers import tweet_rater
 
 app = Flask('__main__')
 
-@app.route('/')
+@app.route('/home/', methods=['GET','POST'])
 def index():
 	return render_template('test_index.html')
 
-@app.route('/display_name/', methods = ['POST'])
-def display_name():
-	first = request.form['first_name']
-	last = request.form['last_name']
-	return 'Hello {} {}'.format(first, last)
+@app.route('/predict/', methods = ['GET','POST'])
+def predict():
+	tweet = request.args.get('tweet')
+	return jsonify(prediction=tweet_rater(tweet))
 
 if __name__ == '__main__':
 	app.run(debug=True)

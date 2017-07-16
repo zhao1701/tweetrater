@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Login</title>
+		<title>Home</title>
+		<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+		<script src='../static/test_script.js' type='text/javascript'></script>
 	</head>
 	<body>
-		<form action='http://127.0.0.1:5000/display_name/' method='post'>
-			<fieldset>
-				<legend>Enter your first and last name:</legend>
-				First name: 
-				<input type='text' name='first_name' placeholder='John'/><br/>
-				Last name:
-				<input type='text' name='last_name' placeholder='Doe'/><br/>
-			</fieldset>
-			<input type='submit' value='SUBMIT'/>
+		<form method='get'>
+			Enter a tweet: 
+			<input type='text' name='tweet' placeholder='Limit: 140 characters' maxlength='140' size='140'/>
+			<button id='submit'>SUBMIT</button>
+			<button id='clear'>CLEAR</button>
 		</form>
+		<div class='results'>
+		</div>
 	</body>
 </html>
