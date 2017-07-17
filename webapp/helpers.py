@@ -58,10 +58,11 @@ with open('static/data_all', 'rb') as file_in:
     df_orig_train = df_orig.reindex(X_train.index)
     df_orig_test = df_orig.reindex(y_test.index)
 
+with open('static/cnn_predictions', 'rb') as file_in:
+    y_pred = pkl.load(file_in)
+
 def get_training_samples(n_samples=10, rating=0, data=df_orig_train):
-    return data[data.rating == rating].text.sample(n_samples).values
+    return data[data.rating == rating].text.sample(n_samples).values.tolist()
 
-def get_test_samples(n_samples=10, data=df_orig_train):
+def get_test_samples(n_samples=10, data=df_orig_test):
     return data.text.sample(n_samples).values
-
-print(get_test_samples(5))
