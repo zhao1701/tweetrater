@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<div class='container-results'>
+			{% if model_accuracy > user_accuracy %}
+				<h1>Sorry, but the model performed better.</h1>
+			{% elif model_accuracy < user_accuracy %}
+				<h1>Congratulations! You beat the model!</h1>
+			{% else %}
+				<h1>You tied the model.</h1>
+			{% endif %}
+			<p>Model accuracy: {{model_accuracy}}</p>
+			<p>User accuracy: {{user_accuracy}}</p>
+		</div>
+		<table>
+			<tr>
+				<th>Tweet</th>
+				<th>Your<br/>Answer</th>
+				<th>Model's<br/>Answer</th>
+				<th>Actual</th>
+			</tr>
+			{% for tweet, user_label, model_label, actual_label in zipped_list %}
+			<tr>
+				<td>{{tweet}}</td>
+				<td>{{legend[user_label]}}</td>
+				<td>{{legend[model_label]}}</td>
+				<td>{{legend[actual_label]}}</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</body>
+</html>
+

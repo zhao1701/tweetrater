@@ -15,7 +15,7 @@ function display_test_tweets(n_tweets=20) {
 
 		var label_buttons = 
 		"<div class = 'answer-choices'>" +
-			"<input type='radio' name='user-label-{}' value='0'>INOFFENSIVE</input>" + 
+			"<input type='radio' name='user-label-{}' value='0' checked>INOFFENSIVE</input>" + 
 			"<input type='radio' name='user-label-{}' value='1'>OFFENSIVE</input>" +	
 			"<input type='radio' name='user-label-{}' value='2'>HATE SPEECH</input>" +
 		"</div>";
