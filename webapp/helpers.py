@@ -65,4 +65,4 @@ def get_training_samples(n_samples=10, rating=0, data=df_orig_train):
     return data[data.rating == rating].text.sample(n_samples).values.tolist()
 
 def get_test_samples(n_samples=10, data=df_orig_test):
-    return data.text.sample(n_samples).values
+    return data.text.sample(n_samples)

@@ -9,21 +9,33 @@
 		<h1>Can you beat the model?</h1>
 		<div class='container-training'>
 			<h2>Example tweets</h2>
-			<div class='container-examples' id='nonoffensive'>
-				<h3>Non-offensive</h3>
+			<div class='container-examples' id='inoffensive' data-rating='0'>
+				<h3>Inoffensive</h3>
+				<button class='more-examples'>MORE EXAMPLES</button>
 				<ul class='container-tweets'>
 				</ul>
 			</div>
-			<div class='container-examples' id='offensive'>
+			<div class='container-examples' id='offensive' data-rating='1'>
 				<h3>Offensive</h3>
+				<button class='more-examples'>MORE EXAMPLES</button>
 				<ul class='container-tweets'>
 				</ul>
 			</div>
-			<div class='container-examples' id='hatespeech'>
+			<div class='container-examples' id='hatespeech' data-rating='2'>
 				<h3>Hate Speech</h3>
+				<button class='more-examples'>MORE EXAMPLES</button>
 				<ul class='container-tweets'>
 				</ul>
 			</div>
+		</div>
+		<div class='container-test'>
+			<h2>Label these tweets!</h2>
+			<form method='post'>
+				<ul class='container-tweets'>
+				</ul>
+				<button class='submit-labels'>SUBMIT ANSWERS</button>
+			</form>	
+			<button class='more-examples' id='test'>LABEL MORE TWEETS</button>
 		</div>
 	</body>
 </html>
