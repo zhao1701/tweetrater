@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Home</title>
-		<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-		<script src='../static/test_tweetrater_script.js' type='text/javascript'></script>
-	</head>
-	<body>
+{% extends "test_base.html" %}
+{% block content %}
+	<div class='row'>
 		<form method='get'>
 			Enter a tweet: 
 			<input type='text' name='tweet' placeholder='Limit: 140 characters' maxlength='140' size='140'/>
@@ -14,5 +9,6 @@
 		</form>
 		<div class='results'>
 		</div>
-	</body>
-</html>
+	</div>
+	<script src='../static/test_tweetrater_script.js' type='text/javascript'></script>
+{% endblock %}

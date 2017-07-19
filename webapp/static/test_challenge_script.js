@@ -14,10 +14,16 @@ function display_test_tweets(n_tweets=20) {
 		$update = $('form .container-tweets');
 
 		var label_buttons = 
-		"<div class = 'answer-choices'>" +
-			"<input type='radio' name='user-label-{}' value='0' checked>INOFFENSIVE</input>" + 
-			"<input type='radio' name='user-label-{}' value='1'>OFFENSIVE</input>" +	
-			"<input type='radio' name='user-label-{}' value='2'>HATE SPEECH</input>" +
+		"<div class='btn-group answer-choices' data-toggle='buttons'>" +
+			"<label class='btn btn-success'>" +
+				"<input type='radio' name='user-label-{}' value='0' autocomplete='off' checked>INOFFENSIVE</input>" + 
+			"</label>" +
+			"<label class='btn btn-warning'>" +
+				"<input type='radio' name='user-label-{}' value='1' autocomplete='off'>OFFENSIVE</input>" +	
+			"</label>" +
+			"<label class='btn btn-danger'>" +
+				"<input type='radio' name='user-label-{}' value='2' autocomplete='off'>HATE SPEECH</input>" +
+			"</label>"
 		"</div>";
 
 		for (var i = 0; i < new_tweets.length; i++) {
