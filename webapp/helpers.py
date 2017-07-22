@@ -40,11 +40,11 @@ def tweet_rater(tweet):
     #print(probas)
     rating = np.argmax(probas)
     if rating == 0:
-        return 'I\'m {:2.4}% sure that\'s not offensive.'.format(probas[0]*100)
+        return rating, 'I\'m {:2.4}% sure that\'s not offensive.'.format(probas[0]*100)
     elif rating == 1:
-        return 'I\'m {:2.4}% sure that\'s offensive.'.format(probas[1]*100)
+        return rating, 'I\'m {:2.4}% sure that\'s offensive.'.format(probas[1]*100)
     else:
-        return 'I\'m {:2.4}% sure that\'s hate speech.'.format(probas[2]*100)
+        return rating, 'I\'m {:2.4}% sure that\'s hate speech.'.format(probas[2]*100)
 
 ### BEAT THE MODEL ###
 
