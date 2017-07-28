@@ -1,0 +1,35 @@
+.row .summary {
+}
+
+.stats {
+	text-align: right;
+}
+
+table .glyphicon-ok-sign {
+	color: green;
+}
+
+table .glyphicon-exclamation-sign {
+	color: goldenrod;
+}
+
+table .glyphicon-remove-sign {
+	color: red;
+}
+
+table .default {
+	background-color: hsla(0, 100%, 100%, 0.9);
+}
+
+table .glyph-column {
+	width: 10px;
+	text-align: center;
+}
+
+h5 {
+	font-size: 1.5em;
+}
+
+.end-button {
+	width: 100%;
+}
