@@ -1,0 +1,18 @@
+.section {
+	background-color: hsla(0, 100%, 100%, 0.9);
+	border-radius: 10px;
+	border: 1px hsla(0, 0%, 90%, 0.9) solid;
+	padding: 0 2rem 0.5rem 2rem;
+	margin-top: 2em;
+}
+
+.section h3 {
+	border-bottom: 1px hsla(0, 0%, 90%, 0.9) solid;
+	padding-bottom: 0.5em;
+	width: auto;
+	display: inline-block;
+}
+
+.section p {
+	margin-top: 0.25em;
+}

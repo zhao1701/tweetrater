@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Custom CSS and javacsript -->
+<script src='../static/js/results_script.js' type='text/javascript'></script>
+<link href='../static/css/results_style.css' rel='stylesheet' type='text/css'/>
+
+<!-- Display user and model performance -->
+<div class='row summary'>
+	<div class='col-sm-8'>
+		{% if model_accuracy > user_accuracy %}
+			<h1 class='lose'>Sorry, the model performed better.</h1>
+		{% elif model_accuracy < user_accuracy %}
+			<h1 class='tie'>Congratulations! You beat the model!</h1>
+		{% else %}
+			<h1 class='win'>You tied the model.</h1>
+		{% endif %}
+	</div>
+	<div class='col-sm-4 stats'>
+		<h5>Model's accuracy: {{model_accuracy}}%</h5>
+		<h5>Your accuracy: {{user_accuracy}}%</h5>
+		<a href='/challenge/' class = 'btn btn-default'>TRY AGAIN</a>
+	</div>
+</div>
+
+<!-- Display table of responses and answers, with row colors
+according to whether user predicted accurately -->
+<div class='row'>
+	<table class='table table-hover table-responsive'>
+		<tr class='default'>
+			<th>Tweet</th>
+			<th>Your Answer</th>
+			<th>Model's Answer</th>
+			<th>Actual Answer</th>
+		</tr>
+		{% for tweet, user_label, model_label, actual_label in zipped_list %}
+			{% if user_label == actual_label %}
+				<tr class='success'>
+					<td>{{tweet}}</td>
+					<td class='glyph-column'>{{legend[user_label]}}</td>
+					<td class='glyph-column'>{{legend[model_label]}}</td>
+					<td class='glyph-column'>{{legend[actual_label]}}</td>
+				</tr>
+			{% else %}
+				<tr class='danger'>
+					<td>{{tweet}}</td>
+					<td class='glyph-column'>{{legend[user_label]}}</td>
+					<td class='glyph-column'>{{legend[model_label]}}</td>
+					<td class='glyph-column'>{{legend[actual_label]}}</td>
+				</tr>
+			{% endif %}
+		{% endfor %}
+	</table>
+	<a href='/challenge/' class = 'btn btn-default end-button'>TRY AGAIN</a>
+</div>
+
+{% endblock %}
