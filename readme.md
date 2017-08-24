@@ -1,6 +1,6 @@
-# Project Overview
+# Identifying Offensive and Hate Speech in Tweets
 ---
-In this personal machine learning project, a number of classification techniques were evaluated for rating tweets as either non-offensive, offensive, or hate speech, which is distinguished from offensive speech in that it is used to express hatred towards or humiliate a targeted group and its members. The models were trained, tuned, and tested on a pre-labeled dataset of tweets with crowd-sourced classifications, and the most accurate model formed the basis for TweetRater, a simple web application that accepts new user-supplied tweets and attempts to classify them by offensiveness.
+In this personal machine learning project, a number of classification techniques were evaluated for rating tweets as either non-offensive, offensive, or hate speech, which is distinguished from offensive speech in that it is used to express hatred towards or humiliate a targeted group and its members. The models were trained, tuned, and tested on a pre-labeled dataset of tweets with crowd-sourced classifications, and the most accurate model formed the basis for [TweetRater](http://tweetrater.pythonanywhere.com), a simple web application that accepts new user-supplied tweets and attempts to classify them by offensiveness.
 
 #### Contents
 
@@ -26,7 +26,7 @@ Because tweets are short by nature and 14,509 tweets is a relatively small numbe
 
 To further keep the corpus's vocabulary size commensurate with the dataset's size, all remaining tokens were replaced by their lemmas. Lemmization, the process of removing inflectional endings of words to return them to their base form, is not a typical preprocessing step for two of the models discussed later: a multilayer perceptron and a convolutional neural network. However, initial experiments showed that because of the limited dataset size, such token normalization enhanced the performance of these models.
 
-Finally, the dataset contains a number of duplicate tweets, which when removed, reduces the number of tweets to 13,086. Of these roughly 13,000 tweets, 30% was held out and stratified to maintain class balance for testing while the remainder served as the training set.
+Finally, the dataset contains a number of duplicate tweets, which when removed, reduces the number of tweets to 13,086. Of these tweets, 30% was held out and stratified to maintain class balance for testing while the remainder served as the training set.
 
 |Data|# Tweets|
 |---|---|
@@ -54,7 +54,7 @@ In a Bernoulli Naive Bayes model, each tweet is converted to a vector of binary 
 As a result of the min_df and max_df hyperparameter values, the corpus vocabulary was reduced from roughly 16,000 terms to 168 terms.
 
 #### Multinomial Naive Bayes with term frequency vectors
-In a Multinomial Naive Bayes model, term frequency vectors are used in place of term presence vectors. The two are the same except that a term frequency vector contains values counting the number of terms a term appears in a tweet rather than indicating whether a term is merely present. A grid search for optimal hyperparameter values returned the same as those for Bernoulli Naive Bayes.
+In a Multinomial Naive Bayes model, term frequency vectors are used in place of term presence vectors. The two are the same except that a term frequency vector contains values counting the number of times a term appears in a tweet rather than indicating whether a term is merely present. A grid search for optimal hyperparameter values returned the same as those for Bernoulli Naive Bayes.
 
 #### Multinomial Naive Bayes with TF-IDF
 The term frequency-inverse document frequency vectorization of a tweet takes the term frequency vectorization a few extra steps. First, whereas previously a term frequency vector consisted of integers representing the multiplicities of terms within a tweet, TF-IDF normalizes these values by dividing each vector element by the number of terms in the tweet. Thus, additional information about the length of a tweet is incorporated into the model. The IDF part of the model then weights each element of the vector, penalizing terms that appear too frequently in other tweets and boosting rarer terms.
@@ -119,7 +119,7 @@ To combat overfitting, a regularization technique called dropout was applied in 
 
 |Hyperparameter|Value|Description|
 |---|---|---|
-|optimizer|'adam'|Specifies how to minimize the loss function. 'Adam' stands for adaptive moment estimation, which computes adaptive learning rates for each weight.|
+|optimizer|'adam'|Specifies how to minimize the loss function. 'Adam' stands for adaptive moment estimation and from a class of optimizers that compute adaptive learning rates for each weight.|
 |loss|'categorical_crossentropy'|Specifies the loss function.|
 |metrics|'accuracy'|Metric to be evaluated by the model.|
 
