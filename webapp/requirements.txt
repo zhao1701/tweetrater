@@ -17,7 +17,7 @@ heroku==0.1.4
 html5lib==0.9999999
 idna==2.5
 itsdangerous==0.24
-Jinja2==2.9.4
+Jinja2==2.11.3
 jsonschema==2.5.1
 jupyter==1.0.0
 jupyter-client==4.4.0
