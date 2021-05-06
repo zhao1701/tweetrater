@@ -9,7 +9,7 @@ Cython==0.25.2
 cytoolz==0.8.2
 dill==0.2.5
 Flask==0.12
-Flask-Cors==3.0.2
+Flask-Cors==3.0.9
 ftfy==4.4.3
 gunicorn==19.7.1
 h5py==2.6.0
