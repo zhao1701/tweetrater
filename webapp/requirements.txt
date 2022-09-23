@@ -37,7 +37,7 @@ pathlib2==2.2.0
 pickleshare==0.7.4
 plac==0.9.6
 preshed==1.0.0
-protobuf==3.3.0
+protobuf==3.18.3
 python-dateutil==2.6.1
 pytz==2016.10
 PyYAML==3.12
